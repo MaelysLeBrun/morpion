@@ -1,0 +1,117 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: #333;
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  color: hotpink;
+  margin-bottom: 1rem;
+}
+
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+#controls select,
+#controls input {
+  padding: 0.4rem;
+  border-radius: 5px;
+  border: 2px solid hotpink;
+  font-size: 1rem;
+  background-color: #ffe6f2;
+  color: #333;
+}
+
+#scores {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 5px;
+  margin-bottom: 1rem;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: 2px solid hotpink;
+  font-size: 2.5rem;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.cell:hover {
+  background-color: #ffe6f2;
+  transform: scale(1.05);
+}
+
+.winning-cell {
+  background-color: #ffccf2 !important;
+  animation: blink 0.8s infinite alternate;
+}
+
+@keyframes blink {
+  from { background-color: #ffccf2; }
+  to { background-color: #fff0f5; }
+}
+
+#status {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+#restartBtn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: hotpink;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#restartBtn:hover {
+  background-color: deeppink;
+}
+
+@media (max-width: 500px) {
+  #board {
+    grid-template-columns: repeat(3, 80px);
+  }
+
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+    line-height: 80px;
+  }
+
+  #controls select,
+  #controls input {
+    font-size: 0.9rem;
+  }
+
+  #restartBtn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

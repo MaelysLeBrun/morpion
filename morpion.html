@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morpion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Morpion</h1>
+
+    <!-- Choix des symboles -->
+    <div class="symbols">
+      <label>Symbole joueur :
+        <select id="playerSymbolSelect">
+          <option value="X">❌</option>
+          <option value="🦊">🦊</option>
+          <option value="🍕">🍕</option>
+        </select>
+      </label>
+      <label>Symbole IA :
+        <select id="aiSymbolSelect">
+          <option value="O">⭕</option>
+          <option value="🐱">🐱</option>
+          <option value="🍔">🍔</option>
+        </select>
+      </label>
+    </div>
+
+    <!-- Pseudo -->
+    <div class="pseudo-input">
+      <label for="playerName">Ton pseudo :</label>
+      <input type="text" id="playerName" placeholder="Joueur">
+    </div>
+
+    <!-- Score -->
+    <div class="scoreboard">
+      <div><span id="playerNameDisplay">Joueur</span> : <span id="playerScore">0</span></div>
+      <div>IA 🤖 : <span id="aiScore">0</span></div>
+    </div>
+
+    <!-- Grille -->
+    <div class="board" id="board">
+      <div class="cell" data-index="0"></div>
+      <div class="cell" data-index="1"></div>
+      <div class="cell" data-index="2"></div>
+      <div class="cell" data-index="3"></div>
+      <div class="cell" data-index="4"></div>
+      <div class="cell" data-index="5"></div>
+      <div class="cell" data-index="6"></div>
+      <div class="cell" data-index="7"></div>
+      <div class="cell" data-index="8"></div>
+    </div>
+
+    <!-- Statut du jeu -->
+    <div class="status" id="statusText">À toi de jouer !</div>
+
+    <!-- Boutons -->
+    <div class="buttons">
+      <button id="restartBtn">🔁 Rejouer</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
